@@ -12,7 +12,7 @@ from .SQLliteDB import SQLDB
 from cogs.models.ModelToSqlDB import Anekdot
 import aiohttp
 
-class EconomySys(commands.Cog):
+class Audio(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -26,4 +26,4 @@ class EconomySys(commands.Cog):
 
 
 async def setup(bot):
-    await bot.add_cog(EconomySys(bot))
+    await bot.add_cog(Audio(bot))

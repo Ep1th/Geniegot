@@ -14,12 +14,26 @@ class SQLDB(commands.Cog):
     def choose_random_joke():
         con = sqlite3.connect('SQLDB.db')
         cur = con.cursor()
-
         cur.execute("SELECT content FROM jokes ORDER BY RANDOM() LIMIT 1 ")
         x = cur.fetchone()
         con.commit()
         return str(x)[2:-3]
 
+    def choose_rd_nature():
+        con = sqlite3.connect('SQLDB.db')
+        cur = con.cursor()
+        cur.execute("SELECT nature FROM info ORDER BY RANDOM() LIMIT 1 ")
+        x = cur.fetchone()
+        con.commit()
+        return str(x)[2:-3]
+
+    def choose_rd_book():
+        con = sqlite3.connect('SQLDB.db')
+        cur = con.cursor()
+        cur.execute("SELECT bookofwise FROM info ORDER BY RANDOM() LIMIT 1 ")
+        x = cur.fetchone()
+        con.commit()
+        return str(x)[2:-3]
     def anekdot_add_to_db(anekdot):
         #Принимает экземпляры класса Anekdot
         con = sqlite3.connect(r'D:/PYCHARM projects/Geniego/SQLDB.db')
